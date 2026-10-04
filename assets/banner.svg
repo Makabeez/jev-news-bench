@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 300" width="1200" height="300" role="img" aria-label="jev-news-bench: confidence is not trust">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#0b0d12"/><stop offset="1" stop-color="#151925"/>
+    </linearGradient>
+    <linearGradient id="hot" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0" stop-color="#ff3d7f"/><stop offset="1" stop-color="#ff8a3d"/>
+    </linearGradient>
+    <style>
+      .t{font:700 54px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#f2f4f8}
+      .s{font:500 22px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#8a93a6}
+      .l{font:600 13px ui-monospace,SFMono-Regular,Menlo,Consolas,monospace;fill:#5d6578;letter-spacing:2px}
+      .gate{stroke:#f2f4f8;stroke-width:2;stroke-dasharray:6 6;animation:dash 2.4s linear infinite}
+      .honest{fill:#3d8bff}
+      .attack{fill:url(#hot)}
+      @keyframes dash{to{stroke-dashoffset:-24}}
+      @keyframes rise{0%,100%{transform:scaleY(.15)}50%{transform:scaleY(1)}}
+      .b{transform-box:fill-box;transform-origin:bottom;animation:rise 3.2s ease-in-out infinite}
+      @media (prefers-reduced-motion:reduce){.b,.gate{animation:none}}
+    </style>
+  </defs>
+  <rect width="1200" height="300" fill="url(#bg)"/>
+  <text x="60" y="118" class="t">jev-news-bench</text>
+  <text x="60" y="160" class="s">confidence is not trust.</text>
+  <text x="60" y="232" class="l">PROMPT INJECTION × CONFIDENCE GATING × POLYMARKET NEWS</text>
+
+  <!-- honest vs attacked answers rising past a confidence gate -->
+  <g transform="translate(760,60)">
+    <line x1="0" y1="62" x2="380" y2="62" class="gate"/>
+    <g>
+      <rect class="b honest" x="10"  y="40" width="22" height="140" style="animation-delay:0s"/>
+      <rect class="b attack" x="42"  y="10" width="22" height="170" style="animation-delay:.2s"/>
+      <rect class="b honest" x="84"  y="80" width="22" height="100" style="animation-delay:.4s"/>
+      <rect class="b attack" x="116" y="6"  width="22" height="174" style="animation-delay:.6s"/>
+      <rect class="b honest" x="158" y="70" width="22" height="110" style="animation-delay:.8s"/>
+      <rect class="b attack" x="190" y="14" width="22" height="166" style="animation-delay:1s"/>
+      <rect class="b honest" x="232" y="96" width="22" height="84"  style="animation-delay:1.2s"/>
+      <rect class="b attack" x="264" y="4"  width="22" height="176" style="animation-delay:1.4s"/>
+      <rect class="b honest" x="306" y="58" width="22" height="122" style="animation-delay:1.6s"/>
+      <rect class="b attack" x="338" y="12" width="22" height="168" style="animation-delay:1.8s"/>
+    </g>
+    <rect x="10" y="196" width="12" height="12" class="honest"/><text x="28" y="207" class="l">HONEST</text>
+    <rect x="118" y="196" width="12" height="12" class="attack"/><text x="136" y="207" class="l">ATTACKED</text>
+    <line x1="240" y1="202" x2="266" y2="202" stroke="#f2f4f8" stroke-width="2" stroke-dasharray="4 4"/><text x="274" y="207" class="l">GATE 0.90</text>
+  </g>
+</svg>

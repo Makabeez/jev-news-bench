@@ -1,0 +1,19 @@
+# secrets
+.env
+.env.*
+!.env.example
+
+# local env
+.venv/
+__pycache__/
+
+# corpus: Google News feed content, not redistributed — rebuild with collect.py
+pairs.jsonl
+pairs*.jsonl
+
+# working outputs at repo root; published copies live in results/
+results.jsonl
+report.md
+injection_raw.jsonl
+injection_report.md
+gate_report.md
